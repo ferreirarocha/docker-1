@@ -11,7 +11,7 @@ ENV fpm_pool /etc/opt/rh/rh-php72/php-fpm.d/www.conf
 
 RUN yum install -y epel-release centos-release-scl.noarch && \
 	yum -y update && \
-	yum install -y nginx rh-php72-php-fpm rh-php72-php-gd rh-php72-php-json rh-php72-php-dom rh-php72-php-xml rh-php72-php-zip rh-php72-php-mbstring supervisor unzip jq
+	yum install -y wget vim nginx rh-php72-php-fpm rh-php72-php-gd rh-php72-php-json rh-php72-php-dom rh-php72-php-xml rh-php72-php-zip rh-php72-php-mbstring supervisor unzip jq
 
 # Config files
 RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" ${php_conf} && \
